@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <rmic classname="edu.stanford.smi.protege.server.SimpleStream" stubversion="1.2" classpathref="maven.compile.classpath" base="E:\Protege-3.5\ProtegeDevel-3.5\target\classes"/>
+  <rmic classname="edu.stanford.smi.protege.server.Server" stubversion="1.2" classpathref="maven.compile.classpath" base="E:\Protege-3.5\ProtegeDevel-3.5\target\classes"/>
+  <rmic classname="edu.stanford.smi.protege.server.ServerProject" stubversion="1.2" classpathref="maven.compile.classpath" base="E:\Protege-3.5\ProtegeDevel-3.5\target\classes"/>
+  <rmic classname="edu.stanford.smi.protege.server.framestore.ServerFrameStore" stubversion="1.2" classpathref="maven.compile.classpath" base="E:\Protege-3.5\ProtegeDevel-3.5\target\classes"/>
+  <rmic classname="edu.stanford.smi.protege.server.narrowframestore.ServerNarrowFrameStore" stubversion="1.2" classpathref="maven.compile.classpath" base="E:\Protege-3.5\ProtegeDevel-3.5\target\classes"/>
+</target>
+</project>
