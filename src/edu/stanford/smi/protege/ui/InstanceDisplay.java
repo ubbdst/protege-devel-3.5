@@ -79,6 +79,7 @@ import edu.stanford.smi.protege.util.StandardDateFormat;
 import edu.stanford.smi.protege.util.SystemUtilities;
 import edu.stanford.smi.protege.widget.ClsWidget;
 import edu.stanford.smi.protege.widget.FormWidget;
+import java.util.UUID;
 
 /**
  * A holder for the display of a runtime "ClsForm". This holder handles the
@@ -405,7 +406,10 @@ public class InstanceDisplay extends JDesktopPane implements Disposable {
     private void createYellowSticky() {
         ensureYellowStickiesAreVisible();
         KnowledgeBase kb = _project.getKnowledgeBase();
-        Instance instance = kb.createInstance(null, kb.getCls(Model.Cls.INSTANCE_ANNOTATION));
+        System.out.println("Received a request for creating new instance for: " + kb.getName());
+        String instanceName = kb.getName() + UUID.randomUUID().toString();
+        //Instance instance = kb.createInstance(null, kb.getCls(Model.Cls.INSTANCE_ANNOTATION));
+        Instance instance = kb.createInstance(instanceName, kb.getCls(Model.Cls.INSTANCE_ANNOTATION));
         ModelUtilities.setOwnSlotValue(instance, Model.Slot.CREATOR, _project.getUserName());
         DateFormat formatter = new StandardDateFormat();
         String date = formatter.format(new Date());

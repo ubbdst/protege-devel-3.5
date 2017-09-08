@@ -22,6 +22,7 @@ public class ArgumentCheckingFrameStore extends AbstractFrameStore {
 
     private static void assertNotNull(String text, Object o) {
         if (o == null) {
+            //System.out.println("null " + text);
             throw new IllegalArgumentException("null " + text);
         }
     }
@@ -35,7 +36,10 @@ public class ArgumentCheckingFrameStore extends AbstractFrameStore {
     }
 
     private static void checkCls(Cls cls) {
-        assertNotNull("class", cls);
+        if(cls == null) {
+            System.out.println("Null class: [" + cls + "]");
+            // assertNotNull("class", cls);
+        }
     }
 
     private static void checkSlot(Slot slot) {

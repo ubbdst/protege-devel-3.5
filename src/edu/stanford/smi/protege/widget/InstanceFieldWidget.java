@@ -131,7 +131,7 @@ public class InstanceFieldWidget extends AbstractSlotWidget {
         Collection clses = getCls().getTemplateSlotAllowedClses(getSlot());
         Cls cls = DisplayUtilities.pickConcreteCls(InstanceFieldWidget.this, getKnowledgeBase(), clses);
         if (cls != null) {
-            Instance instance = getKnowledgeBase().createInstance("Salamuu", cls);
+            Instance instance = getKnowledgeBase().createInstance(null, cls);
             if (instance instanceof Cls) {
                 Cls newcls = (Cls) instance;
                 if (newcls.getDirectSuperclassCount() == 0) {

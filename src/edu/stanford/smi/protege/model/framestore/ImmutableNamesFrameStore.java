@@ -10,6 +10,8 @@ import edu.stanford.smi.protege.model.FrameID;
 import edu.stanford.smi.protege.model.KnowledgeBase;
 import edu.stanford.smi.protege.model.SimpleInstance;
 import edu.stanford.smi.protege.model.Slot;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ImmutableNamesFrameStore extends FrameStoreAdapter {
 	private KnowledgeBase kb;
@@ -21,7 +23,9 @@ public class ImmutableNamesFrameStore extends FrameStoreAdapter {
 
 	public FrameID adjustFrameId(FrameID id) {
 		if (id == null || id.getName() == null) {
-			return new FrameID(generateUniqueName("Class"));
+                      FrameID frameId = new FrameID(generateUniqueName("Class"));
+                           //Logger.getLogger(getClass().getName()).log(Level.INFO, "Unique frame id: " + frameId.toString());
+                           return frameId;
 		} else {
 			checkUniqueness(id.getName());
 			return id;
@@ -46,7 +50,7 @@ public class ImmutableNamesFrameStore extends FrameStoreAdapter {
 			} else {
 			    nextName += 10000;
 			}
-		}
+		}      
 		return uniqueName;
 	}
 

@@ -4,17 +4,7 @@ package edu.stanford.smi.protege.model;
 //ESCA*JAVA0100
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.EventListener;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -195,6 +185,8 @@ public class DefaultKnowledgeBase implements KnowledgeBase {
 
     public synchronized Cls createCls(FrameID id, Collection directSuperclasses, Collection directTypes,
             boolean loadDefaults) {
+        System.out.println("Creating new class: " + id.getName());
+
         //        if (directTypes.isEmpty()) {
         //            Cls directType;
         //            Cls leadingSuperclass = (Cls) CollectionUtilities.getFirstItem(directSuperclasses);
